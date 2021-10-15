@@ -5,9 +5,11 @@ public class Segment{
 	private char direction;
 	
 	public void setDirection() {
-		if(nodeList.size() > 1) 
+		if(nodeList.size() > 1) {
 			if(nodeList.get(0).row == nodeList.get(1).row)
 				direction = 'h';
+			else {direction= 'v';}
+		}
 	}
 	
 	//adds node to segment
