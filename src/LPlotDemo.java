@@ -31,6 +31,14 @@ public class LPlotDemo {
 			grids.add(grid);
 		}
 		
+		//tests that grid was created correctly
+//		for(int i = 0; i < grids.get(0).length; i++) {
+//			for(int j = 0; j < grids.get(0)[i].length; j++) {
+//				System.out.print(grids.get(0)[i][j].value);
+//			}
+//			System.out.println();
+//		}
+		
 		segmentLists.add(algo.findSegments(grids.get(0)));
 		
 		System.out.println(segmentLists.get(0).size());
