@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LPlotDemo {
-	private static ArrayList<Node[][]> grids = new ArrayList<>();
+	public static ArrayList<Node[][]> grids = new ArrayList<>();
+	public static ArrayList<ArrayList<Segment>> segmentLists = new ArrayList<>();
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		Scanner input;
+		Algorithms algo = new Algorithms();
 		try {
 			File inputFile = new File("input.txt");
 			input = new Scanner(inputFile);
@@ -27,6 +29,17 @@ public class LPlotDemo {
 				}
 			}
 			grids.add(grid);
+		}
+		
+		segmentLists.add(algo.findSegments(grids.get(0)));
+		
+		System.out.println(segmentLists.get(0).size());
+		
+		for(Segment s : segmentLists.get(0)) {
+			for(Node n : s.nodeList) {
+				System.out.println(n.row + " " + n.col);
+			}
+			System.out.println();
 		}
 		
 		
